@@ -1,0 +1,3 @@
+[submodule "botw-tools"]
+	path = botw-tools
+	url = git@github.com:realfun/botw-tools.git
