@@ -8,7 +8,7 @@ from stl import mesh
 import os
 
 file_paths = []
-for folder, _, files in os.walk('terrain'):
+for folder, _, files in os.walk('botw-tools/terrain'):
     if not files or not files[0].endswith('.hght'):
         continue
     file_paths.append((folder, sorted(files)))
@@ -25,7 +25,7 @@ x_min = int(width / 12)
 x_max = width - x_min
 x_min += x_max // 50  # hack! a little bit less on the left
 
-base_height = 31
+base_height = 31 # this brings the sea level to 0. Chasm in hebra area is leveled up, not ideal but acceptable
 
 img = Image.new("RGB", (x_max - x_min + 1, y_max - y_min + 1))
 heights = np.zeros((y_max - y_min + 1, x_max - x_min + 1))
